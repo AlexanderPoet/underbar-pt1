@@ -31,4 +31,13 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns false if target is a key of an object', () => {
+    const ponyAges = {
+      'pony1': 3,
+      'pony2': 13,
+      'pony3': 11,
+      'pony4': 6
+    };
+    expect(_.contains(ponyAges, 'pony1')).toBe(false);
+  });
 });

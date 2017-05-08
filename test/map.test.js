@@ -6,4 +6,10 @@ describe('map()', () => {
     const mappedArr = _.map(arr, (el) => el * el);
     expect(mappedArr).toEqual([1, 4, 9, 16, 25]);
   });
+
+  it('maps every string in an array of strings plus', () => {
+    const arr = ['one', 'two', 'three', 'four', 'five'];
+    const mappedArr = _.map(arr, (el) => el + 'o');
+    expect(mappedArr).toEqual(['oneo', 'twoo', 'threeo', 'fouro', 'fiveo']);
+  });
 });

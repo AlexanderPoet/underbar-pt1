@@ -23,4 +23,17 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('filters an obj return an array of only objects', () => {
+    const cloths = {
+      shirts: {
+        red: ['S', 'M']
+      },
+      shorts: {
+        blue: ['M', 'L']
+      },
+      hat: 'onesize'
+    }
+    expect(_.filter(cloths, value => typeof value !== 'object')).toEqual(['onesize']);
+  });
 });

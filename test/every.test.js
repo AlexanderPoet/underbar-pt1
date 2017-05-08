@@ -17,5 +17,15 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true if all values in an object are odd and we test for odd numbers', () => {
+      const nums = {
+        one: 1,
+        two: 3,
+        three: 5,
+        four: 7,
+        five: 9
+      };
+      expect(_.every(nums, num => num % 2 === 1)).toBe(true);
+    });
   });
 });

@@ -39,5 +39,18 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+
+  it('iterates every property of an object, passing the value, the corresponding key, and the entire object to the callback', () => {
+    const po = {
+      name: 'Po',
+      age: 25
+    };
+    let count = 0;
+    _.each(po, function(value, key, iteratedObj) {
+      expect(value).toEqual(iteratedObj[key]);
+      count += 1;
+    });
+    expect(count).toBe(2);
+  });
 });
 
